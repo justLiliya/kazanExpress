@@ -16,7 +16,7 @@ public class HomePageDisplayTest extends TestBase {
 
     ElementsCollection headerButtons = $$("i.hidden-mbs");
     ElementsCollection cards = $$(".ui-card");
-    ElementsCollection razdel = $$(".title-text");
+    ElementsCollection sections = $$(".title-text");
 
     @BeforeEach
     public void setUp() {
@@ -32,10 +32,10 @@ public class HomePageDisplayTest extends TestBase {
         step("Проверяем наличие раздела Ещё", () -> $(".more").shouldHave(text("Ещё")));
         step("Проверяем наличие баннера", () -> $(".banner-block").isDisplayed());
 
-        step("Проверяем, что разделов на странице больше 0", () -> assertTrue(razdel.size() > 0));
-        step("Проверяем наличие раздела Популярное", () -> razdel.get(0).shouldHave(text("Популярное")));
+        step("Проверяем, что разделов на странице больше 0", () -> assertTrue(sections.size() > 0));
+        step("Проверяем наличие раздела Популярное", () -> sections.get(0).shouldHave(text("Популярное")));
 
-        step("Проверяем наличие раздела Популярное", () -> razdel.get(0).shouldHave(text("Популярное")));
+        step("Проверяем наличие раздела Популярное", () -> sections.get(0).shouldHave(text("Популярное")));
         step("Проверяем, что на странице есть карточки товаров", () -> assertTrue(cards.size() > 0));
 
         step("Проверяем наличие кнопки Войти", () -> headerButtons.get(0).shouldHave(text("Войти")));
