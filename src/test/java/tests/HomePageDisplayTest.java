@@ -51,7 +51,7 @@ public class HomePageDisplayTest extends TestBase {
     }
 
     @Test
-    public void addIssueToBugTest() {
+    public void addIssueToBagTest() {
         step("Переводим ко второму ряду карточек", () -> cards.get(5).isDisplayed());
         step("Кладем товар в корзину", () -> $x("(//*[name()='path'])[96]").parent().shouldBe(appear).click());
         step("Переходим в Корзину", () -> headerButtons.get(2).click());
